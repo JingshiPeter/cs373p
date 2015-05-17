@@ -1,0 +1,23 @@
+language: python
+
+python:
+    - "3.4"
+
+before_install:
+    - sudo apt-get update
+
+install:
+    - uname -a
+    - pip install --upgrade pip
+    - pip install coverage
+    - sudo apt-get install python-numpy
+
+before_script:
+    - coverage help
+    - python -V
+    - python -c "import numpy; print(numpy.__version__)"
+
+script:
+    - cd examples
+    - make test
+    - cd -
