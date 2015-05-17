@@ -3,9 +3,7 @@ FILES :=       \
 	UnitTests3 \
 	Coverage1  \
 	Coverage2  \
-	Coverage3  \
-	Types      \
-	Functions
+	Coverage3
 
 clean:
 	rm -f  .coverage
