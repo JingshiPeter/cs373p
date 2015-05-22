@@ -84,3 +84,5 @@ sync:
     --include "makefile"        \
     --exclude "*"               \
     . downing@$(CS):cs/cs373/python/
+	echo
+	cd examples; make sync

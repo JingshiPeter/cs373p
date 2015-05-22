@@ -4,7 +4,7 @@
 # Assertions.py
 # -------------
 
-# https://docs.python.org/3.2/reference/simple_stmts.html#grammar-token-assert_stmt
+# https://docs.python.org/3.4/reference/simple_stmts.html#grammar-token-assert_stmt
 
 def cycle_length (n) :
     assert n > 0
