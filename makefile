@@ -1,3 +1,6 @@
+clean:
+	cd examples; make clean
+
 config:
 	git config -l
 
@@ -11,56 +14,56 @@ init:
 
 pull:
 	@rsync -r -t -u -v --delete              \
-	--include "Hello.py"                     \
-	--include "Assertions.py"                \
-	--include "UnitTests1.py"                \
-	--include "UnitTests2.py"                \
-	--include "UnitTests3.py"                \
-	--include "Coverage1.py"                 \
-	--include "Coverage2.py"                 \
-	--include "Coverage3.py"                 \
-	--exclude "*"                            \
-	../../../examples/python/ examples
+    --include "Hello.py"                     \
+    --include "Assertions.py"                \
+    --include "UnitTests1.py"                \
+    --include "UnitTests2.py"                \
+    --include "UnitTests3.py"                \
+    --include "Coverage1.py"                 \
+    --include "Coverage2.py"                 \
+    --include "Coverage3.py"                 \
+    --exclude "*"                            \
+    ../../../examples/python/ examples
 
-#	@rsync -r -t -u -v --delete              \
-#	--include "collatz/"                     \
-#	--include "Collatz.py"                   \
-#	--include "gitignore.sample"             \
-#	--include "makefile.sample"              \
-#	--include "RunCollatz.py"                \
-#	--include "RunCollatz.sample.in"         \
-#	--include "RunCollatz.sample.out"        \
-#	--include "TestCollatz.py"               \
-#	--include "TestCollatz.sample.out"       \
-#	--exclude "*"                            \
-#	../../projects/python/ projects
-#	@rsync -r -t -u -v --delete              \
-#	--include "netflix/"                     \
-#	--include "gitignore.sample"             \
-#	--include "makefile.sample"              \
-#	--include "RunNetflix.sample.in"         \
-#	--include "RunNetflix.sample.out"        \
-#	--exclude "*"                            \
-#	../../projects/python/ projects
+#   @rsync -r -t -u -v --delete              \
+#   --include "collatz/"                     \
+#   --include "Collatz.py"                   \
+#   --include "gitignore.sample"             \
+#   --include "makefile.sample"              \
+#   --include "RunCollatz.py"                \
+#   --include "RunCollatz.sample.in"         \
+#   --include "RunCollatz.sample.out"        \
+#   --include "TestCollatz.py"               \
+#   --include "TestCollatz.sample.out"       \
+#   --exclude "*"                            \
+#   ../../projects/python/ projects
+#   @rsync -r -t -u -v --delete              \
+#   --include "netflix/"                     \
+#   --include "gitignore.sample"             \
+#   --include "makefile.sample"              \
+#   --include "RunNetflix.sample.in"         \
+#   --include "RunNetflix.sample.out"        \
+#   --exclude "*"                            \
+#   ../../projects/python/ projects
 #
-#	--include "Equals.py"                    \
-#	--include "Copy.py"                      \
-#	--include "Complex.py"                   \
-#	--include "Inheritance.py"               \
-#	--include "Sequences.py"                 \
-#	--include "Lists.py"                     \
-#	--include "Strings.py"                   \
-#	--include "Sets.py"                      \
-#	--include "Dicts.py"                     \
-#	--include "Builder.py"                   \
-#	--include "Prototype.py"                 \
-#	--include "Adapter.py"                   \
-#	--include "Decorator.py"                 \
-#	--include "Composite.py"                 \
-#	--include "Visitor.py"                   \
+#   --include "Equals.py"                    \
+#   --include "Copy.py"                      \
+#   --include "Complex.py"                   \
+#   --include "Inheritance.py"               \
+#   --include "Sequences.py"                 \
+#   --include "Lists.py"                     \
+#   --include "Strings.py"                   \
+#   --include "Sets.py"                      \
+#   --include "Dicts.py"                     \
+#   --include "Builder.py"                   \
+#   --include "Prototype.py"                 \
+#   --include "Adapter.py"                   \
+#   --include "Decorator.py"                 \
+#   --include "Composite.py"                 \
+#   --include "Visitor.py"                   \
 
 push:
-	cd examples; make clean
+	make clean
 	git add .travis.yml
 	git add examples
 	git add makefile
@@ -69,7 +72,7 @@ push:
 	git status
 
 status:
-	cd examples; make clean
+	make clean
 	git add examples
 	git branch
 	git remote -v
@@ -77,7 +80,7 @@ status:
 
 sync:
 	@echo `pwd`
-	@rsync -r -t -u -v --delete      \
-	--include "makefile"             \
-	--exclude "*"                    \
-	. downing@$(CS):cs/cs373/python/
+	@rsync -r -t -u -v --delete \
+    --include "makefile"        \
+    --exclude "*"               \
+    . downing@$(CS):cs/cs373/python/
