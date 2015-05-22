@@ -60,8 +60,8 @@ pull:
 #	--include "Visitor.py"                   \
 
 push:
+	cd examples; make clean
 	git add .travis.yml
-	git add *.py
 	git add examples
 	git add makefile
 	git commit -m "another commit"
@@ -69,6 +69,7 @@ push:
 	git status
 
 status:
+	cd examples; make clean
 	git add examples
 	git branch
 	git remote -v
