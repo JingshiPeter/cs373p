@@ -21,3 +21,10 @@ script:
     - cd examples
     - make test
     - cd -
+    - cd projects/collatz
+    - make collatz-tests
+    - make Collatz.html
+    - make Collatz.log
+    - make test
+    - make check
+    - cd -

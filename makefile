@@ -24,19 +24,21 @@ pull:
     --include "Coverage3.py"                 \
     --exclude "*"                            \
     ../../../examples/python/ examples
+	@echo
+	@rsync -r -t -u -v --delete              \
+    --include "collatz/"                     \
+    --include "Collatz.py"                   \
+    --include "gitignore.sample"             \
+    --include "makefile"                     \
+    --include "RunCollatz.in"                \
+    --include "RunCollatz.py"                \
+    --include "RunCollatz.sample.out"        \
+    --include "TestCollatz.py"               \
+    --include "TestCollatz.sample.out"       \
+    --include "travis.sample.yml"            \
+    --exclude "*"                            \
+    ../../../projects/python/ projects
 
-#   @rsync -r -t -u -v --delete              \
-#   --include "collatz/"                     \
-#   --include "Collatz.py"                   \
-#   --include "gitignore.sample"             \
-#   --include "makefile.sample"              \
-#   --include "RunCollatz.py"                \
-#   --include "RunCollatz.sample.in"         \
-#   --include "RunCollatz.sample.out"        \
-#   --include "TestCollatz.py"               \
-#   --include "TestCollatz.sample.out"       \
-#   --exclude "*"                            \
-#   ../../projects/python/ projects
 #   @rsync -r -t -u -v --delete              \
 #   --include "netflix/"                     \
 #   --include "gitignore.sample"             \
