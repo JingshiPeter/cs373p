@@ -34,6 +34,15 @@ clean:
 config:
 	git config -l
 
+sync:
+	make clean
+	@echo `pwd`
+	@rsync -r -t -u -v --delete \
+    --include "*.py"            \
+    --include "makefile"        \
+    --exclude "*"               \
+    . downing@$(CS):cs/cs373/python/projects/collatz/
+
 test: RunCollatz.out TestCollatz.out
 
 collatz-tests:
