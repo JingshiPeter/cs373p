@@ -3,6 +3,8 @@ clean:
 	@echo
 	cd exercises; make clean
 	@echo
+	cd projects/collatz; make clean
+	@echo
 	cd quizzes; make clean
 
 config:
@@ -79,12 +81,16 @@ sync:
 	@echo
 	cd exercises; make sync
 	@echo
+	cd projects/collatz; make sync
+	@echo
 	cd quizzes; make sync
 
 test:
 	cd examples; make test
 	@echo
 	cd exercises; make test
+	@echo
+	cd projects/collatz; make test
 	@echo
 	cd quizzes; make test
 

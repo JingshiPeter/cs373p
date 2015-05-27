@@ -23,8 +23,8 @@ test:
 	for i in $(FILES);                     \
     do                                     \
         echo;                              \
-        echo coverage run --branch $$i.py; \
-             coverage run --branch $$i.py; \
-        echo coverage report -m;           \
-             coverage report -m;           \
+        echo coverage3 run --branch $$i.py; \
+             coverage3 run --branch $$i.py; \
+        echo coverage3 report -m;           \
+             coverage3 report -m;           \
     done
