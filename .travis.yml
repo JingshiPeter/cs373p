@@ -13,6 +13,12 @@ install:
     - sudo apt-get install python-numpy
 
 before_script:
+    - which pip
+    - which pip3
+    - which python
+    - which python3
+    - which coverage
+    - which coverage3
     - pip -V
     - pip freeze
     - python -V
@@ -23,10 +29,16 @@ script:
     - cd examples
     - make test
     - cd -
+    - cd exercises
+    - make test
+    - cd -
     - cd projects/collatz
     - make collatz-tests
     - make Collatz.html
     - make Collatz.log
     - make test
     - make check
+    - cd -
+    - cd quizzes
+    - make test
     - cd -

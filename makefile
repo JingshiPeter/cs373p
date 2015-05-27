@@ -3,8 +3,6 @@ clean:
 	@echo
 	cd exercises; make clean
 	@echo
-	cd projects/collatz; make clean
-	@echo
 	cd quizzes; make clean
 
 config:
@@ -160,6 +158,13 @@ sync:
 	cd exercises; make sync
 	@echo
 	cd quizzes; make sync
+
+test:
+	cd examples; make test
+	@echo
+	cd exercises; make test
+	@echo
+	cd quizzes; make test
 
 versions:
 	which pip3
