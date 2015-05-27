@@ -13,8 +13,10 @@ install:
     - sudo apt-get install python-numpy
 
 before_script:
-    - coverage help
+    - pip -V
+    - pip freeze
     - python -V
+    - coverage help
     - python -c "import numpy; print(numpy.__version__)"
 
 script:
