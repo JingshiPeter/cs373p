@@ -75,7 +75,7 @@ sync:
 	@rsync -r -t -u -v --delete \
     --include "makefile"        \
     --exclude "*"               \
-    . downing@$(CS):cs/cs373/python/
+    . downing@$(CS):cs/cs373/github/python/
 	@echo
 	cd examples; make sync
 	@echo

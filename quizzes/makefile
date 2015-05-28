@@ -12,7 +12,7 @@ sync:
     --include "*.py"            \
     --include "makefile"        \
     --exclude "*"               \
-    . downing@$(CS):cs/cs373/python/quizzes/
+    . downing@$(CS):cs/cs373/github/python/quizzes/
 
 test:
 	for i in $(FILES);                     \

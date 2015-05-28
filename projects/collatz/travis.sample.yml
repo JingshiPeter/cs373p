@@ -17,18 +17,7 @@ install:
     - sudo apt-get install python-numpy
 
 before_script:
-    - which pip3
-    - pip3 -V
-    - pip3 freeze
-    - which python3
-    - python3 -V
-    - which coverage3
-    - coverage3 help
-    - python3 -c "import numpy; print(numpy.__version__)"
+    - make versions
 
 script:
-    - make collatz-tests
-    - make Collatz.html
-    - make Collatz.log
     - make test
-    - make check

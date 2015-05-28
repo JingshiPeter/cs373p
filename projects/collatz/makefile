@@ -42,9 +42,16 @@ sync:
     --include "*.py"            \
     --include "makefile"        \
     --exclude "*"               \
-    . downing@$(CS):cs/cs373/python/projects/collatz/
+    . downing@$(CS):cs/cs373/github/python/projects/collatz/
 
 test: RunCollatz.out TestCollatz.out
+	make collatz-tests
+	@echo
+	make Collatz.html
+	@echo
+	make Collatz.log
+	@echo
+	make check
 
 collatz-tests:
 	git clone https://github.com/cs373-summer-2015/collatz-tests.git

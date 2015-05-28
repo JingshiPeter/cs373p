@@ -17,7 +17,7 @@ sync:
     --include "*.py"            \
     --include "makefile"        \
     --exclude "*"               \
-    . downing@$(CS):cs/cs373/python/examples/
+    . downing@$(CS):cs/cs373/github/python/examples/
 
 test:
 	for i in $(FILES);                     \
