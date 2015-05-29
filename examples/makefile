@@ -20,9 +20,9 @@ sync:
     . downing@$(CS):cs/cs373/github/python/examples/
 
 test:
-	for i in $(FILES);                     \
-    do                                     \
-        echo;                              \
+	for i in $(FILES);                      \
+    do                                      \
+        echo;                               \
         echo coverage3 run --branch $$i.py; \
              coverage3 run --branch $$i.py; \
         echo coverage3 report -m;           \
