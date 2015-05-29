@@ -39,13 +39,6 @@ config:
 	git config -l
 
 test: RunCollatz.out TestCollatz.out
-	make collatz-tests
-	@echo
-	make Collatz.html
-	@echo
-	make Collatz.log
-	@echo
-	make check
 
 collatz-tests:
 	git clone https://github.com/cs373-summer-2015/collatz-tests.git
@@ -62,17 +55,3 @@ RunCollatz.out: RunCollatz.py
 TestCollatz.out: TestCollatz.py
 	coverage3 run    --branch TestCollatz.py >  TestCollatz.out 2>&1
 	coverage3 report -m                      >> TestCollatz.out
-
-versions:
-	which pip3
-	pip3 -V
-	@echo
-	pip3 freeze
-	@echo
-	which python3
-	python3 -V
-	@echo
-	which coverage3
-	coverage3 help
-	@echo
-	python3 -c "import numpy; print(numpy.__version__)"

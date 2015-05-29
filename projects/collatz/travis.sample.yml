@@ -11,13 +11,20 @@ before_install:
     - sudo apt-get update
 
 install:
-    - uname -a
     - pip install --upgrade pip
     - pip install coverage
     - sudo apt-get install python-numpy
 
 before_script:
-    - make versions
+    - pip3 -V
+    - pip3 freeze
+    - python3 -V
+    - coverage3 help | grep version
+    - python3 -c "import numpy; print(numpy.__version__)"
 
 script:
+    - make collatz-tests
+    - make Collatz.html
+    - make Collatz.log
     - make test
+    - make check

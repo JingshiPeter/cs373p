@@ -1,11 +1,11 @@
 clean:
-	cd examples; make clean
+	cd examples; make --no-print-directory clean
 	@echo
-	cd exercises; make clean
+	cd exercises; make --no-print-directory clean
 	@echo
-	cd projects/collatz; make clean
+	cd projects/collatz; make --no-print-directory clean
 	@echo
-	cd quizzes; make clean
+	cd quizzes; make --no-print-directory clean
 
 config:
 	git config -l
@@ -86,26 +86,28 @@ sync:
 	cd quizzes; make sync
 
 test:
-	cd examples; make test
+	cd examples; make --no-print-directory test
 	@echo
-	cd exercises; make test
+	cd exercises; make --no-print-directory test
 	@echo
-	cd projects/collatz; make test
+	cd projects/collatz; make --no-print-directory test
 	@echo
 	cd quizzes; make test
 
 versions:
-	uname -a
 	@echo
 	which pip3
+	@echo
 	pip3 -V
 	@echo
 	pip3 freeze
 	@echo
 	which python3
+	@echo
 	python3 -V
 	@echo
 	which coverage3
-	coverage3 help
+	@echo
+	coverage3 help | grep version
 	@echo
 	python3 -c "import numpy; print(numpy.__version__)"
