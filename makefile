@@ -90,7 +90,11 @@ test:
 	@echo
 	cd exercises; make --no-print-directory test
 	@echo
-	cd projects/collatz; make --no-print-directory test
+	cd projects/collatz;                         \
+        make --no-print-directory collatz-tests; \
+        make --no-print-directory Collatz.html;  \
+        make --no-print-directory test;          \
+        make --no-print-directory check
 	@echo
 	cd quizzes; make test
 
