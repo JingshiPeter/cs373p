@@ -16,6 +16,8 @@ install:
     - sudo apt-get install python-numpy
 
 before_script:
+    - uname -a
+    - set
     - pip3 -V
     - pip3 freeze
     - python3 -V

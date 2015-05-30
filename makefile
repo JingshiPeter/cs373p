@@ -99,6 +99,9 @@ test:
 	cd quizzes; make test
 
 versions:
+	uname -a
+	@echo
+	set
 	@echo
 	which pip3
 	@echo
