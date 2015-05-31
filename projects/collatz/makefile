@@ -31,9 +31,6 @@ clean:
 	rm -f TestCollatz.out
 	rm -rf __pycache__
 
-config:
-	git config -l
-
 sync:
 	make clean
 	@echo `pwd`
