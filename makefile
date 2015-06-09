@@ -3,8 +3,6 @@ clean:
 	@echo
 	cd exercises; make --no-print-directory clean
 	@echo
-	cd projects/collatz; make --no-print-directory clean
-	@echo
 	cd quizzes; make --no-print-directory clean
 
 config:
@@ -30,21 +28,6 @@ pull:
     --include "Coverage3.py"                 \
     --exclude "*"                            \
     ../../../examples/python/ examples
-	@echo
-	@rsync -r -t -u -v --delete              \
-    --include "collatz/"                     \
-    --include "Collatz.py"                   \
-    --include "gitignore.sample"             \
-    --include "makefile"                     \
-    --include "makefile.sample"              \
-    --include "RunCollatz.in"                \
-    --include "RunCollatz.py"                \
-    --include "RunCollatz.sample.out"        \
-    --include "TestCollatz.py"               \
-    --include "TestCollatz.sample.out"       \
-    --include "travis.sample.yml"            \
-    --exclude "*"                            \
-    ../../../projects/python/ projects
 
 push:
 	make clean
@@ -53,7 +36,6 @@ push:
 	git add examples
 	git add exercises
 	git add makefile
-	git add projects
 	git add quizzes
 	git commit -m "another commit"
 	git push
@@ -64,7 +46,6 @@ status:
 	@echo
 	git add examples
 	git add exercises
-	git add projects
 	git add quizzes
 	git branch
 	git remote -v
@@ -81,20 +62,12 @@ sync:
 	@echo
 	cd exercises; make sync
 	@echo
-	cd projects/collatz; make sync
-	@echo
 	cd quizzes; make sync
 
 test:
 	cd examples; make --no-print-directory test
 	@echo
 	cd exercises; make --no-print-directory test
-	@echo
-	cd projects/collatz;                         \
-        make --no-print-directory collatz-tests; \
-        make --no-print-directory Collatz.html;  \
-        make --no-print-directory test;          \
-        make --no-print-directory check
 	@echo
 	cd quizzes; make test
 
