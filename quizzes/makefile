@@ -23,3 +23,24 @@ test:
         echo coverage3 report -m;           \
              coverage3 report -m;           \
     done
+
+versions:
+	uname -a
+	@echo
+	printenv
+	@echo
+	which pip3
+	@echo
+	pip3 -V
+	@echo
+	pip3 freeze
+	@echo
+	which python3
+	@echo
+	python3 -V
+	@echo
+	which coverage3
+	@echo
+	coverage3 help | grep version
+	@echo
+	python3 -c "import numpy; print(numpy.__version__)"

@@ -28,6 +28,13 @@ pull:
     --include "Coverage3.py"                 \
     --exclude "*"                            \
     ../../../examples/python/ examples
+	@rsync -r -t -u -v --delete              \
+    --include "IsPrime1.py"                  \
+    --include "IsPrime1T.py"                 \
+    --include "IsPrime2.py"                  \
+    --include "IsPrime2T.py"                 \
+    --exclude "*"                            \
+    ../../../exercises/python/ python
 
 push:
 	make clean
@@ -69,25 +76,11 @@ test:
 	@echo
 	cd exercises; make --no-print-directory test
 	@echo
-	cd quizzes; make test
+	cd quizzes; make --no-print-directory test
 
 versions:
-	uname -a
+	cd examples; make --no-print-directory versions
 	@echo
-	printenv
+	cd exercises; make --no-print-directory versions
 	@echo
-	which pip3
-	@echo
-	pip3 -V
-	@echo
-	pip3 freeze
-	@echo
-	which python3
-	@echo
-	python3 -V
-	@echo
-	which coverage3
-	@echo
-	coverage3 help | grep version
-	@echo
-	python3 -c "import numpy; print(numpy.__version__)"
+	cd quizzes; make --no-print-directory versions
