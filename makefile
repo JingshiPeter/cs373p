@@ -34,7 +34,7 @@ pull:
     --include "IsPrime2.py"                  \
     --include "IsPrime2T.py"                 \
     --exclude "*"                            \
-    ../../../exercises/python/ python
+    ../../../exercises/python/ exercises
 
 push:
 	make clean
