@@ -31,16 +31,16 @@ versions:
 	@echo
 	which pip3
 	@echo
-	pip3 -V
+	pip3 --version
 	@echo
 	pip3 freeze
 	@echo
 	which python3
 	@echo
-	python3 -V
+	python3 --version
 	@echo
 	which coverage3
 	@echo
-	coverage3 help | grep version
+	coverage3 --version
 	@echo
 	python3 -c "import numpy; print(numpy.__version__)"
