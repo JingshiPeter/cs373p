@@ -21,32 +21,17 @@ def cycle_length (n) :
     return c
 
 class MyUnitTests (TestCase) :
-    def test_1 (self) :
-        self.assertEqual(cycle_length(1), 1)
-
-    def test_2 (self) :
-        self.assertEqual(cycle_length(2), 2)
-
-    def test_3 (self) :
+    def test (self) :
         self.assertEqual(cycle_length(3), 8)
 
 if __name__ == "__main__" :
     main()
 
 """ #pragma: no cover
-% Coverage3.py
-...
-----------------------------------------------------------------------
-Ran 3 tests in 0.000s
-
-OK
-
-
-
 % coverage run --branch Coverage3.py
-...
+.
 ----------------------------------------------------------------------
-Ran 3 tests in 0.000s
+Ran 1 test in 0.000s
 
 OK
 
@@ -55,5 +40,5 @@ OK
 % coverage report -m
 Name        Stmts   Miss Branch BrMiss  Cover   Missing
 -------------------------------------------------------
-Coverage3      19      0      4      0   100%
+Coverage3      16      0      4      0   100%
 """

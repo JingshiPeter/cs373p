@@ -37,7 +37,7 @@ AssertionError
 
 
 
-% python -O Assertions.py
+% python3 -O Assertions.py
 Assertions.py
 Done.
 """

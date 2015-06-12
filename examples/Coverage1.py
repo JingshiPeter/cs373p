@@ -21,7 +21,7 @@ def cycle_length (n) :
     return c
 
 class MyUnitTests (TestCase) :
-    def test_1 (self) :
+    def test (self) :
         self.assertEqual(cycle_length(1), 1)
 
 if __name__ == "__main__" :
@@ -106,15 +106,6 @@ Options:
 
 
 
-% Coverage1.py
-.
-----------------------------------------------------------------------
-Ran 1 test in 0.000s
-
-OK
-
-
-
 % coverage run --branch Coverage1.py
 .
 ----------------------------------------------------------------------
@@ -127,5 +118,5 @@ OK
 % coverage report -m
 Name        Stmts   Miss Branch BrMiss  Cover   Missing
 -------------------------------------------------------
-Coverage1      15      4      4      3    63%   15-19
+Coverage1      16      4      4      3    65%   15-19
 """

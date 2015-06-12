@@ -16,7 +16,7 @@ Python is procedural, object-oriented, dynamically typed, and garbage collected.
 
 
 
-% python3 -V
+% python3 --version
 Python 3.4.0
 
 

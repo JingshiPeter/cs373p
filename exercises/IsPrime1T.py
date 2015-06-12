@@ -27,16 +27,16 @@ class MyUnitTests (TestCase) :
     def test_5 (self) :
         self.assertTrue(is_prime(5))
 
-    def test_6 (self) :
+    def test_7 (self) :
         self.assertTrue(is_prime(7))
 
-    def test_7 (self) :
+    def test_9 (self) :
         self.assertTrue(is_prime(9))
 
-    def test_8 (self) :
+    def test_27 (self) :
         self.assertFalse(is_prime(27))
 
-    def test_9 (self) :
+    def test_29 (self) :
         self.assertTrue(is_prime(29))
 
 if __name__ == "__main__" :
