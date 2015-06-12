@@ -41,3 +41,12 @@ class MyUnitTests (TestCase) :
 
 if __name__ == "__main__" :
     main()
+
+/*
+IsPrime2T.py
+.........
+----------------------------------------------------------------------
+Ran 9 tests in 0.001s
+
+OK
+*/
