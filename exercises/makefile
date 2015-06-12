@@ -1,4 +1,7 @@
-FILES :=
+FILES :=       \
+    IsPrime1T  \
+    IsPrime2T  \
+    FactorialT
 
 clean:
 	rm -f  .coverage
