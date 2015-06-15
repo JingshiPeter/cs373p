@@ -11,21 +11,21 @@ from operator import add
 print("Operators.py")
 
 i = 2
-j = -i
+j = -i         # negation
 assert i ==  2
 assert j == -2
 #-i += 1       # SyntaxError: illegal expression for augmented assignment
 
 i = 2
 j = 3
+i = j         # assignment
 #k = (i = j)  # SyntaxError: invalid syntax
-i = j
 assert i == 3
 assert j == 3
 
 i = 2
 j = 3
-k = i + j
+k = i + j     # addition
 assert i == 2
 assert j == 3
 assert k == 5
@@ -41,8 +41,8 @@ assert k == 5
 
 i = 2
 j = 3
+i += j        # in-place addition
 #k = (i += j) # SyntaxError: invalid syntax
-i += j
 assert i == 5
 assert j == 3
 
@@ -93,7 +93,7 @@ assert j == 2
 
 i = 12
 j = 10
-k = i % j      # integer mod
+k = i % j      # mod
 assert i == 12
 assert j == 10
 assert k ==  2

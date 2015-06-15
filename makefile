@@ -29,6 +29,7 @@ pull:
     --include "Exceptions.py"                \
     --include "Types.py"                     \
     --include "Operators.py"                 \
+    --include "StackVsHeap.py"               \
     --include "Iteration.py"                 \
     --include "Iterables.py"                 \
     --exclude "*"                            \
