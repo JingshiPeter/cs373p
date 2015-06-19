@@ -47,6 +47,12 @@ for v in a :
     v += "x"                      # ?
 assert a == ["abc", "def", "ghi"]
 
+a = ["abc", "def", "ghi"]
+s = ""
+for v in a :
+    s += v
+assert s == "abcdefghi"
+
 a = [[2, "abc"], [3, "def"], [4, "ghi"]]
 s = 0
 for u, v in a :
@@ -64,7 +70,7 @@ assert type(a) is set
 assert not hasattr(a, "__next__")
 assert     hasattr(a, "__iter__")
 s = 0
-for v in a :
+for v in a :                      # order not guaranteed
     s += v
 assert s == 9
 
@@ -73,21 +79,24 @@ assert type(d) is dict
 assert not hasattr(d, "__next__")
 assert     hasattr(d, "__iter__")
 s = 0
-for k in d :
+for k in d :                           # order not guaranteed
     s += k
 assert s == 9
 
 d = {2 : "abc", 3 : "def", 4 : "ghi"}
-s = ""
-for k in d :
-    s += d[k]
-assert s == "abcdefghi"
+k = d.keys()
+assert list(k) == [2, 3, 4]
+assert list(k) == [2, 3, 4]
 
 d = {2 : "abc", 3 : "def", 4 : "ghi"}
-s = 0
-for k, v in d.items() :
-    s += k
-assert s == 9
+v = d.values()
+assert list(v) == ["abc", "def", "ghi"]
+assert list(v) == ["abc", "def", "ghi"]
+
+d = {2 : "abc", 3 : "def", 4 : "ghi"}
+kv = d.items()
+assert list(kv) == [(2, "abc"), (3, "def"), (4, "ghi")]
+assert list(kv) == [(2, "abc"), (3, "def"), (4, "ghi")]
 
 x = range(10)
 assert type(x) is range
@@ -176,7 +185,7 @@ assert x == [2,   3,  4]
 assert y == [10, 15, 20]
 
 x = [2, 3, 4]
-y = (v * 5 for v in x)
+y = (v * 5 for v in x)          # generator
 assert type(y) is GeneratorType
 assert hasattr(y, "__next__")
 assert hasattr(y, "__iter__")
@@ -292,14 +301,28 @@ assert     hasattr(y, "__iter__")
 assert x == {2 : "abc", 3 : "def", 4 : "ghi"}
 assert y == {2 : "abcxyz", 3 : "defxyz", 4 : "ghixyz"}
 
+a = [2, 3, 4]
+r = reversed(a)
+assert list(r) == [4, 3, 2]
+assert list(r) == []
+
+a = ["abc", "def", "ghi"]
+e = enumerate(a)
+assert list(e) == [(0, "abc"), (1, "def"), (2, "ghi")]
+assert list(e) == []
+
+a = [2, 3, 4]
+b = [5, 6, 7]
+z = zip(a, b)
+assert list(z) == [(2, 5), (3, 6), (4, 7)]
+assert list(z) == []
+
+a = [4, 2, 3]
+s = sorted(a)
+assert list(s) == [2, 3, 4]
+assert list(s) == [2, 3, 4]
+
 assert     all([True,  2, 3.45, "abc", [2, 3, 4], (2, 3, 4), {2, 3, 4}, {2 : "abc", 3 : "def", 4 : "ghi"}])
 assert not any([False, 0, 0.0,  "",    [],        (),        set(),     dict()])
-
-assert list(zip())                       == []
-assert list(zip([]))                     == []
-assert list(zip((), ()))                 == []
-assert list(zip([2, 3]))                 == [(2,), (3,)]
-assert list(zip((2, 3), (4, 5), (6, 7))) == [(2, 4, 6), (3, 5, 7)]
-assert list(zip([2, 3, 4], [5, 6, 7]))   == [(2, 5), (3, 6), (4, 7)]
 
 print("Done.")

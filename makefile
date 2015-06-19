@@ -41,8 +41,16 @@ pull:
     --include "IsPrime2T.py"                 \
     --include "Factorial.py"                 \
     --include "FactorialT.py"                \
+    --include "RMSE.py"                      \
+    --include "RMSEt.py"                     \
     --exclude "*"                            \
     ../../../exercises/python/ exercises
+	@rsync -r -t -u -v --delete              \
+    --include "Quiz3.py"                     \
+    --include "Quiz4.py"                     \
+    --include "Quiz5.py"                     \
+    --exclude "*"                            \
+    ../../quizzes/ quizzes
 
 push:
 	make clean

@@ -1,7 +1,8 @@
 FILES :=       \
     IsPrime1T  \
     IsPrime2T  \
-    FactorialT
+    FactorialT \
+    RMSEt
 
 clean:
 	rm -f  .coverage
