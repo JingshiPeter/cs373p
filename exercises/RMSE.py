@@ -106,7 +106,7 @@ def rmse_zip_generator_sum (a, p) :
 
 def rmse_numpy (a, p) :
     """
-    O(n) in space
+    O(1) in space
     O(n) in time
     """
     return sqrt(mean(square(subtract(a, p))))

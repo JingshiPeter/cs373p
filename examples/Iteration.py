@@ -85,18 +85,18 @@ assert s == 9
 
 d = {2 : "abc", 3 : "def", 4 : "ghi"}
 k = d.keys()
-assert list(k) == [2, 3, 4]
-assert list(k) == [2, 3, 4]
+assert set(k) == {2, 3, 4}
+assert set(k) == {2, 3, 4}
 
 d = {2 : "abc", 3 : "def", 4 : "ghi"}
 v = d.values()
-assert list(v) == ["abc", "def", "ghi"]
-assert list(v) == ["abc", "def", "ghi"]
+assert set(v) == {"abc", "def", "ghi"}
+assert set(v) == {"abc", "def", "ghi"}
 
 d = {2 : "abc", 3 : "def", 4 : "ghi"}
 kv = d.items()
-assert list(kv) == [(2, "abc"), (3, "def"), (4, "ghi")]
-assert list(kv) == [(2, "abc"), (3, "def"), (4, "ghi")]
+assert set(kv) == {(2, "abc"), (3, "def"), (4, "ghi")}
+assert set(kv) == {(2, "abc"), (3, "def"), (4, "ghi")}
 
 x = range(10)
 assert type(x) is range
