@@ -1,7 +1,8 @@
 FILES :=  \
     Quiz3 \
     Quiz4 \
-    Quiz5
+    Quiz5 \
+    Quiz6
 
 clean:
 	rm -f  .coverage

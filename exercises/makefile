@@ -2,7 +2,9 @@ FILES :=       \
     IsPrime1T  \
     IsPrime2T  \
     FactorialT \
-    RMSEt
+    RMSEt      \
+    CollatzT   \
+    Collatz2T
 
 clean:
 	rm -f  .coverage

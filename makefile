@@ -32,6 +32,8 @@ pull:
     --include "StackVsHeap.py"               \
     --include "Iteration.py"                 \
     --include "Iterables.py"                 \
+    --include "Lambdas.py"                   \
+    --include "Generators.py"                \
     --exclude "*"                            \
     ../../../examples/python/ examples
 	@rsync -r -t -u -v --delete              \
@@ -43,12 +45,17 @@ pull:
     --include "FactorialT.py"                \
     --include "RMSE.py"                      \
     --include "RMSEt.py"                     \
+    --include "Collatz.py"                   \
+    --include "CollatzT.py"                  \
+    --include "Collatz2.py"                  \
+    --include "Collatz2T.py"                 \
     --exclude "*"                            \
     ../../../exercises/python/ exercises
 	@rsync -r -t -u -v --delete              \
     --include "Quiz3.py"                     \
     --include "Quiz4.py"                     \
     --include "Quiz5.py"                     \
+    --include "Quiz6.py"                     \
     --exclude "*"                            \
     ../../quizzes/ quizzes
 
