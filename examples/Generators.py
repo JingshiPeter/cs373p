@@ -6,18 +6,23 @@
 
 # https://docs.python.org/3.4/reference/simple_stmts.html#grammar-token-yield_stmt
 
-import types
+from types import GeneratorType
 
 def f () :
     yield 2
     yield 3
     yield 4
 
-print "Generators.py"
+print("Generators.py")
 
 p = f()
-assert type(p) is types.GeneratorType
+assert type(p) is GeneratorType
+assert hasattr(p, "__next__")
+assert hasattr(p, "__iter__")
+assert(list(p) == [2, 3, 4])
+assert(list(p) == [])
 
+p = f()
 assert next(p) == 2
 assert next(p) == 3
 assert next(p) == 4
@@ -32,4 +37,7 @@ except StopIteration as e :
 else :
     assert False
 
-print "Done."
+q = iter(p)
+assert q is p
+
+print("Done.")

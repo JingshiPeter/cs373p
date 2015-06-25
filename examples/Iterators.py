@@ -40,6 +40,21 @@ assert hasattr(p, "__iter__")
 assert(list(p) == [2, 3, 4])
 assert(list(p) == [])
 
+p = iter(x)
+assert next(p) == 2
+assert next(p) == 3
+assert next(p) == 4
+
+try :
+    assert next(p) == 5
+    assert False
+except StopIteration as e :
+    assert type(e)      is StopIteration
+    assert type(e.args) is tuple
+    assert len(e.args)  == 0
+else :
+    assert False
+
 q = iter(p)
 assert q is p
 
