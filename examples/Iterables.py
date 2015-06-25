@@ -10,7 +10,7 @@ def test_iterator (p) :
     assert hasattr(p, "__next__")
     assert hasattr(p, "__iter__")
     q = iter(p)                   # q = p.__iter__()
-    assert p is q
+    assert q is p
 
     assert next(p) == 2 # p.__next__()
     assert next(p) == 3

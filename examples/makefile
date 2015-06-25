@@ -1,17 +1,23 @@
-FILES :=        \
-	Hello       \
-	UnitTests3  \
-	Coverage1   \
-	Coverage2   \
-	Coverage3   \
-	Exceptions  \
-	Types       \
-	Operators   \
-	StackVsHeap \
-	Iteration   \
-	Iterables   \
-	Lambdas     \
-	Generators
+FILES :=              \
+	Hello             \
+	UnitTests3        \
+	Coverage1         \
+	Coverage2         \
+	Coverage3         \
+	Exceptions        \
+	Types             \
+	Operators         \
+	StackVsHeap       \
+	Iteration         \
+	Iterators         \
+	Generators        \
+	Iterables         \
+	FunctionParallel  \
+	FunctionKeywords  \
+	FunctionDefaults  \
+	FunctionUnpacking \
+	FunctionTuple     \
+	FunctionDict
 
 clean:
 	rm -f  .coverage

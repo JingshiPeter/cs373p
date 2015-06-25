@@ -31,8 +31,15 @@ pull:
     --include "Operators.py"                 \
     --include "StackVsHeap.py"               \
     --include "Iteration.py"                 \
+    --include "Iterators.py"                 \
     --include "Generators.py"                \
     --include "Iterables.py"                 \
+    --include "FunctionParallel.py"          \
+    --include "FunctionKeywords.py"          \
+    --include "FunctionDefaults.py"          \
+    --include "FunctionUnpacking.py"         \
+    --include "FunctionTuple.py"             \
+    --include "FunctionDict.py"              \
     --exclude "*"                            \
     ../../../examples/python/ examples
 	@rsync -r -t -u -v --delete              \
