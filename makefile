@@ -55,6 +55,8 @@ pull:
     --include "Quiz4.py"                     \
     --include "Quiz5.py"                     \
     --include "Quiz6.py"                     \
+    --include "Quiz7.py"                     \
+    --include "Quiz8.py"                     \
     --exclude "*"                            \
     ../../quizzes/ quizzes
 
