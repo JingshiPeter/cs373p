@@ -31,9 +31,8 @@ pull:
     --include "Operators.py"                 \
     --include "StackVsHeap.py"               \
     --include "Iteration.py"                 \
-    --include "Iterables.py"                 \
-    --include "Lambdas.py"                   \
     --include "Generators.py"                \
+    --include "Iterables.py"                 \
     --exclude "*"                            \
     ../../../examples/python/ examples
 	@rsync -r -t -u -v --delete              \
