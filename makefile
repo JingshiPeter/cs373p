@@ -35,6 +35,7 @@ pull:
     --include "Generators.py"                \
     --include "Iterables.py"                 \
     --include "FunctionKeywords.ipynb"       \
+    --include "FunctionKeywords.py"          \
     --include "FunctionDefaults.py"          \
     --include "FunctionUnpacking.py"         \
     --include "FunctionTuple.py"             \
