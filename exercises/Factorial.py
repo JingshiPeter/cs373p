@@ -49,6 +49,3 @@ def factorial_range_for (n) :
 def factorial_range_reduce (n) :
     assert n >= 0
     return reduce(mul, range(1, n + 1), 1)
-
-if __name__ == "__main__" :
-    main()

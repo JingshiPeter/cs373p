@@ -12,7 +12,6 @@ FILES :=              \
 	Iterators         \
 	Generators        \
 	Iterables         \
-	FunctionParallel  \
 	FunctionKeywords  \
 	FunctionDefaults  \
 	FunctionUnpacking \
@@ -52,7 +51,7 @@ versions:
 	@echo
 	pip3 --version
 	@echo
-	pip3 freeze
+	pip3 list
 	@echo
 	which python3
 	@echo

@@ -12,6 +12,3 @@ def collatz_print (a) :
 def collatz_solve (r, w) :
     for s in collatz_print(collatz_eval(collatz_read(r))) :
         w.write(s)
-
-if __name__ == "__main__" :
-    main()

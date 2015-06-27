@@ -4,7 +4,8 @@
 # Generators.py
 # -------------
 
-# https://docs.python.org/3.4/reference/simple_stmts.html#grammar-token-yield_stmt
+# https://docs.python.org/3.5/library/stdtypes.html#generator-types
+# https://docs.python.org/3.5/reference/simple_stmts.html#the-yield-statement
 
 from types import GeneratorType
 
