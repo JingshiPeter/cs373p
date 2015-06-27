@@ -38,6 +38,7 @@ pull:
     --include "FunctionKeywords.py"          \
     --include "FunctionDefaults.ipynb"       \
     --include "FunctionDefaults.py"          \
+    --include "FunctionUnpacking.ipynb"      \
     --include "FunctionUnpacking.py"         \
     --include "FunctionTuple.py"             \
     --include "FunctionDict.py"              \
