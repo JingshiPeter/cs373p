@@ -42,6 +42,7 @@ pull:
     --include "FunctionUnpacking.py"         \
     --include "FunctionTuple.ipynb"          \
     --include "FunctionTuple.py"             \
+    --include "FunctionDict.ipynb"           \
     --include "FunctionDict.py"              \
     --exclude "*"                            \
     ../../../examples/python/ examples

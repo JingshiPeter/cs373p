@@ -7,7 +7,6 @@
 print("FunctionTuple.py")
 
 def f (x, y, *z) :
-    assert type(z) is tuple
     return [x, y, z]
 
 assert f(2, 3)       == [2, 3, ()]
@@ -26,22 +25,22 @@ u = (2,)
 assert f(y = 3, *u) == [2, 3, ()]
 assert f(*u, y = 3) == [2, 3, ()]
 
-d = {"y" : 3, "x" : 2}
-assert f(**d) == [2, 3, ()]
-#f(2, **d)                   # TypeError: f() got multiple values for keyword argument 'x'
+d1 = {"y" : 3, "x" : 2}
+assert f(**d1) == [2, 3, ()]
+#f(2, **d1)                   # TypeError: f() got multiple values for keyword argument 'x'
 
-d = {"z" : 4, "y" : 3}
-#f(2, **d)             # TypeError: f() got an unexpected keyword argument 'z'
-#f(**d)                # TypeError: f() got an unexpected keyword argument 'z'
+d2 = {"z" : 4, "y" : 3}
+#f(2, **d2)             # TypeError: f() got an unexpected keyword argument 'z'
+#f(**d2)                # TypeError: f() got an unexpected keyword argument 'z'
 
-d = {"y" : 3}
-assert f(2,     **d) == [2, 3, ()]
-assert f(x = 2, **d) == [2, 3, ()]
-#f(**d)                             # TypeError: f() takes at least 2 arguments (1 given)
+d3 = {"y" : 3}
+assert f(2,     **d3) == [2, 3, ()]
+assert f(x = 2, **d3) == [2, 3, ()]
+#f(**d3)                             # TypeError: f() takes at least 2 arguments (1 given)
 
-d = {"y" : 3, "t" : 5}
-#f(2,     **d)         # TypeError: f() got an unexpected keyword argument 't'
-#f(x = 2, **d)         # TypeError: f() got an unexpected keyword argument 't'
-#f(**d)                # TypeError: f() got an unexpected keyword argument 't'
+d4 = {"y" : 3, "t" : 5}
+#f(2,     **d4)         # TypeError: f() got an unexpected keyword argument 't'
+#f(x = 2, **d4)         # TypeError: f() got an unexpected keyword argument 't'
+#f(**d4)                # TypeError: f() got an unexpected keyword argument 't'
 
 print("Done.")
