@@ -16,20 +16,20 @@ def f () :
 
 print("Generators.py")
 
-p = f()
-assert type(p) is GeneratorType
-assert hasattr(p, "__next__")
-assert hasattr(p, "__iter__")
-assert(list(p) == [2, 3, 4])
-assert(list(p) == [])
+p1 = f()
+assert type(p1) is GeneratorType
+assert hasattr(p1, "__next__")
+assert hasattr(p1, "__iter__")
+assert(list(p1) == [2, 3, 4])
+assert(list(p1) == [])
 
-p = f()
-assert next(p) == 2
-assert next(p) == 3
-assert next(p) == 4
+p2 = f()
+assert next(p2) == 2
+assert next(p2) == 3
+assert next(p2) == 4
 
 try :
-    assert next(p) == 5
+    assert next(p2) == 5
     assert False
 except StopIteration as e :
     assert type(e)      is StopIteration
@@ -38,7 +38,8 @@ except StopIteration as e :
 else :
     assert False
 
-q = iter(p)
-assert q is p
+p3 = f()
+q = iter(p3)
+assert q is p3
 
 print("Done.")

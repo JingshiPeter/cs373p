@@ -32,6 +32,7 @@ pull:
     --include "StackVsHeap.py"               \
     --include "Iteration.py"                 \
     --include "Iterators.py"                 \
+    --include "Generators.ipynb"             \
     --include "Generators.py"                \
     --include "Iterables.ipynb"              \
     --include "Iterables.py"                 \
