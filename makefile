@@ -40,6 +40,7 @@ pull:
     --include "FunctionDefaults.py"          \
     --include "FunctionUnpacking.ipynb"      \
     --include "FunctionUnpacking.py"         \
+    --include "FunctionTuple.ipynb"          \
     --include "FunctionTuple.py"             \
     --include "FunctionDict.py"              \
     --exclude "*"                            \
