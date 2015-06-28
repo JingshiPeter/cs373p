@@ -33,6 +33,7 @@ pull:
     --include "Iteration.py"                 \
     --include "Iterators.py"                 \
     --include "Generators.py"                \
+    --include "Iterables.ipynb"              \
     --include "Iterables.py"                 \
     --include "FunctionKeywords.ipynb"       \
     --include "FunctionKeywords.py"          \
