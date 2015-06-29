@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 #Jingshi's copy of Iterators.py
+#I am trying to copy this file to my repository so that I can practice and work on my own.
+#I am not intended to change the original content
 # ------------
 # Iterators.py
 # ------------
