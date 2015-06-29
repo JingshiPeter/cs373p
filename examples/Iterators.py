@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-
+#Jingshi's copy of Iterators.py
 # ------------
 # Iterators.py
 # ------------
