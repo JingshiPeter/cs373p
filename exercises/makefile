@@ -6,6 +6,14 @@ FILES :=       \
     CollatzT   \
     Collatz2T
 
+%.pyx: %.py
+	$<
+
+%.pyy: %.py
+	make clean
+	coverage3 run --branch $<
+	coverage3 report -m
+
 clean:
 	rm -f  .coverage
 	rm -f  *.pyc
@@ -21,13 +29,11 @@ sync:
     . downing@$(CS):cs/cs373/github/python/exercises/
 
 test:
-	for i in $(FILES);                      \
-    do                                      \
-        echo;                               \
-        echo coverage3 run --branch $$i.py; \
-             coverage3 run --branch $$i.py; \
-        echo coverage3 report -m;           \
-             coverage3 report -m;           \
+	for i in $(FILES);                                \
+    do                                                \
+        echo;                                         \
+        echo make --no-print-directory clean $$i.pyx; \
+             make --no-print-directory clean $$i.pyx; \
     done
 
 versions:
@@ -39,7 +45,7 @@ versions:
 	@echo
 	pip3 --version
 	@echo
-	pip3 freeze
+	pip3 list
 	@echo
 	which python3
 	@echo

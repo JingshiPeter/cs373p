@@ -7,7 +7,6 @@ FILES :=              \
 	Exceptions        \
 	Types             \
 	Operators         \
-	StackVsHeap       \
 	Iteration         \
 	Iterators         \
 	Generators        \
@@ -17,6 +16,14 @@ FILES :=              \
 	FunctionUnpacking \
 	FunctionTuple     \
 	FunctionDict
+
+%.pyx: %.py
+	$<
+
+%.pyy: %.py
+	make clean
+	coverage3 run --branch $<
+	coverage3 report -m
 
 clean:
 	rm -f  .coverage
@@ -33,13 +40,11 @@ sync:
     . downing@$(CS):cs/cs373/github/python/examples/
 
 test:
-	for i in $(FILES);                      \
-    do                                      \
-        echo;                               \
-        echo coverage3 run --branch $$i.py; \
-             coverage3 run --branch $$i.py; \
-        echo coverage3 report -m;           \
-             coverage3 report -m;           \
+	for i in $(FILES);                                \
+    do                                                \
+        echo;                                         \
+        echo make --no-print-directory clean $$i.pyx; \
+             make --no-print-directory clean $$i.pyx; \
     done
 
 versions:

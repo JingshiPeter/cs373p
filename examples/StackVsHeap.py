@@ -33,4 +33,4 @@ try :
 except RuntimeError :
     assert False
 
-print "Done."
+print("Done.")

@@ -4,6 +4,8 @@ clean:
 	cd exercises; make --no-print-directory clean
 	@echo
 	cd quizzes; make --no-print-directory clean
+	@echo
+	cd collatz; make --no-print-directory clean
 
 config:
 	git config -l
@@ -70,8 +72,21 @@ pull:
     --include "Quiz6.py"                     \
     --include "Quiz7.py"                     \
     --include "Quiz8.py"                     \
+    --include "Quiz9.py"                     \
     --exclude "*"                            \
     ../../quizzes/ quizzes
+	@rsync -r -t -u -v --delete              \
+    --include "Collatz.py"                   \
+    --include "gitignore.sample"             \
+    --include "makefile.sample"              \
+    --include "RunCollatz.in"                \
+    --include "RunCollatz.py"                \
+    --include "RunCollatz.sample.out"        \
+    --include "TestCollatz.py"               \
+    --include "TestCollatz.sample.out"       \
+    --include "travis.sample.yml"            \
+    --exclude "*"                            \
+    ../../../projects/python/collatz/ collatz
 
 push:
 	make clean
@@ -81,6 +96,7 @@ push:
 	git add exercises
 	git add makefile
 	git add quizzes
+	git add collatz
 	git commit -m "another commit"
 	git push
 	git status
@@ -91,6 +107,7 @@ status:
 	git add examples
 	git add exercises
 	git add quizzes
+	git add collatz
 	git branch
 	git remote -v
 	git status
@@ -107,6 +124,8 @@ sync:
 	cd exercises; make sync
 	@echo
 	cd quizzes; make sync
+	@echo
+	cd collatz; make sync
 
 test:
 	cd examples; make --no-print-directory test
@@ -114,6 +133,8 @@ test:
 	cd exercises; make --no-print-directory test
 	@echo
 	cd quizzes; make --no-print-directory test
+	@echo
+	cd collatz; make --no-print-directory test
 
 versions:
 	cd examples; make --no-print-directory versions
@@ -121,3 +142,5 @@ versions:
 	cd exercises; make --no-print-directory versions
 	@echo
 	cd quizzes; make --no-print-directory versions
+	@echo
+	cd collataz; make --no-print-directory versions
